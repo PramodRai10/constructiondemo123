@@ -12,7 +12,7 @@ function SiteDetails() {
     })
 
     // const [details, setDetails] = useContext(DetailsContext);
-    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
     const [details, setDetails] = useState(obj);
 
     // useEffect(()=>{
