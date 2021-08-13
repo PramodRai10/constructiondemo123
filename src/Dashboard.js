@@ -18,7 +18,7 @@ function CreateCard(user) {
 }
 
 function Dashboard({ location }) {
-
+  let arr = location.state.data;
   return (
     <div>
       <div className="topHead">
