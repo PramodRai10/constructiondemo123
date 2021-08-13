@@ -50,7 +50,6 @@ const center = {
 
 export default function GoogleMap2() {
     const [details, setDetails] = useContext(DetailsContext);
-    console.log("API KEY" + process.env.GATSBY_GOOGLE_MAPS_API_KEY);
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_API_KEY,
         libraries,
