@@ -50,7 +50,7 @@ function Login() {
         var data = qs.stringify({ email, otp });
         var config = {
             method: 'post',
-            url: process.env.REACT_APP_HEROKU + '/otp',
+            url: process.env.GATSBY_APP_HEROKU + '/otp',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },

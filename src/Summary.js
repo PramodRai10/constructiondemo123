@@ -40,7 +40,7 @@ function Summary() {
         var data = qs.stringify(details);
         var config = {
             method: 'post',
-            url: process.env.REACT_APP_HEROKU + '/storeDetails',
+            url: process.env.GATSBY_APP_HEROKU + '/storeDetails',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },

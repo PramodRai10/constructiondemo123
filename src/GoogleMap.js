@@ -90,7 +90,7 @@ export default function GoogleMap2() {
         });
         var config = {
             method: 'post',
-            url: process.env.REACT_APP_HEROKU + '/getImageUrl',
+            url: process.env.GATSBY_APP_HEROKU + '/getImageUrl',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },

@@ -45,7 +45,7 @@ function Otp({ location }) {
         var data = qs.stringify({ email: details.email });
         var config = {
             method: 'post',
-            url: process.env.REACT_APP_HEROKU + '/getDetails',
+            url: process.env.GATSBY_APP_HEROKU + '/getDetails',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
