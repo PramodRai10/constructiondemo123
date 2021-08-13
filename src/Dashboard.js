@@ -26,7 +26,7 @@ function Dashboard({ location }) {
       </div>
       {/* {UserDetails.map(CreateCard)} */}
       <div>
-           <dl className="bodyCard"> {location && location.state.data.map(CreateCard)}</dl>
+           <div className="bodyCard"> {location.state.data.map(CreateCard)} </div>
       </div>
     </div>
   );
