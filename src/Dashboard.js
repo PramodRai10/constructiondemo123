@@ -18,11 +18,7 @@ function CreateCard(user) {
 }
 
 function Dashboard({ location }) {
-  console.log(location.state);
-  console.log(typeof(location.state.data));
-  console.log(location.state.data);
-  let arr = JSON.parse(location.state.data);
-  console.log(typeof(arr));
+
   return (
     <div>
       <div className="topHead">
