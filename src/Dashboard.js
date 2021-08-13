@@ -18,6 +18,11 @@ function CreateCard(user) {
 }
 
 function Dashboard({ location }) {
+  console.log(location.state);
+  console.log(typeof(location.state.data));
+  console.log(location.state.data);
+  let arr = JSON.parse(location.state.data);
+  console.log(typeof(arr));
   return (
     <div>
       <div className="topHead">
@@ -26,7 +31,7 @@ function Dashboard({ location }) {
       </div>
       {/* {UserDetails.map(CreateCard)} */}
       <div>
-           <div className="bodyCard"> {location.state.data.map(CreateCard)} </div>
+           <div className="bodyCard"> {arr.map(CreateCard)} </div>
       </div>
     </div>
   );
