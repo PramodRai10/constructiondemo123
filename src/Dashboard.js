@@ -3,12 +3,12 @@ import "./dashboard.css";
 import Card from "./Card";
 import "./card.css";
 
-function CreateCard(d) {
+function CreateCard(user) {
 
   return <Card
     status={user.status}
-    companyname={user.companyname}
-    address={user.address}
+    companyname={user.company_name}
+    address={"House Number: "+user.house_number,}
     DateOfSubmissoin={user.DateOfSubmissoin}
     viewDetails={user.viewDetails}
   />
