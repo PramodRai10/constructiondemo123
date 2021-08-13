@@ -23,7 +23,7 @@ const DrawingComponent = () => {
             bounds.push(point);
         }
         link_str += `${bounds[0].lat},${bounds[0].lng}`
-        link_str += `&sensor=false&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+        link_str += `&sensor=false&key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}`
         //console.log(link_str);
         var result = parseFloat(window.google.maps.geometry.spherical.computeArea(polygon.getPath())) * 0.000247105;
         var area = result.toFixed(4);
