@@ -5,6 +5,7 @@ import axios from "axios";
 import "./PersonalDetails.css";
 import topImg from "./images/topImg.jpg";
 import img_2 from "./images/img_2.jpg";
+import { window, document } from "browser-monads";
 
 
 const api = axios.create({
@@ -21,7 +22,7 @@ function PersonalDetails() {
     })
 
     // const [details, setDetails] = useContext(DetailsContext)
-    let obj = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
     const [details, setDetails] = useState(obj);
     // useEffect(()=>{
     //     localStorage.setItem('constructionUser', JSON.stringify(details));
@@ -37,7 +38,7 @@ function PersonalDetails() {
             let phone = document.querySelector("#phone").value;
 
             if (fullName != "" && companyName != "" && emailId != "" && phone != "" && phone.length == 11) {
-                localStorage.setItem('constructionUser', JSON.stringify(details));
+                window.localStorage.setItem('constructionUser', JSON.stringify(details));
                 navigate("/siteDetails")
             } else {
                 console.log('Some Inputs are not filled');

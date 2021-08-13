@@ -4,6 +4,7 @@ import { navigate } from "@reach/router";
 import axios from "axios";
 import "./PersonalDetails.css";
 import topImg from "./images/Img_3.jpg";
+import { window, document } from "browser-monads";
 
 function SiteDetails() {
     var [error, setError] = useState({
@@ -11,7 +12,7 @@ function SiteDetails() {
     })
 
     // const [details, setDetails] = useContext(DetailsContext);
-    let obj = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
     const [details, setDetails] = useState(obj);
 
     // useEffect(()=>{
@@ -36,7 +37,7 @@ function SiteDetails() {
 
             if (houseNumber != "" && streetName != "" && townName != "") {
                 //console.log(details);
-                localStorage.setItem('constructionUser', JSON.stringify(details));
+                window.localStorage.setItem('constructionUser', JSON.stringify(details));
                 navigate("/selectArea")
             } else {
                 console.log('Some Inputs are not filled');

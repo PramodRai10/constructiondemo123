@@ -4,13 +4,14 @@ import axios from "axios";
 import qs from "qs";
 import './Spinner.css';
 import "./PersonalDetails.css";
+import { window, document } from "browser-monads";
 
 import './success.css';
 import topImg from "./images/topImg.jpg";
 import img_2 from "./images/img_2.jpg";
 
 function Summary() {
-    let details = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    let details = window.localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
     function post_data(e) {
         e.preventDefault();
         document.querySelector('.cont').style.display = 'block';
@@ -31,7 +32,7 @@ function Summary() {
                 data1 = JSON.parse(data1);
                 console.log(data1);
                 if (data1.statusCode == 200) {
-                    localStorage.removeItem('constructionUser');
+                    window.localStorage.removeItem('constructionUser');
                     navigate('/complete')
                 }
                 else {

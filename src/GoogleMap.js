@@ -4,6 +4,7 @@ import { DrawingManager } from '@react-google-maps/api';
 import { navigate } from "@reach/router";
 import DrawingCmp from "./DrawingCmp";
 import './Spinner.css';
+import { window, document } from "browser-monads";
 
 import {
     GoogleMap,
@@ -50,7 +51,7 @@ const center = {
 
 export default function GoogleMap2() {
     // const [details, setDetails] = useContext(DetailsContext);
-    let obj = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
     const [details, setDetails] = useState(obj);
 
     const { isLoaded, loadError } = useLoadScript({
@@ -110,7 +111,7 @@ export default function GoogleMap2() {
                 setDetails({
                     ...details, image_url: data1.body
                 });
-                localStorage.setItem('constructionUser', JSON.stringify(details));
+                window.localStorage.setItem('constructionUser', JSON.stringify(details));
                 navigate("/confirmDetails");
             })
             .catch(function (error) {
