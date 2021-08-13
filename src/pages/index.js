@@ -1,0 +1,99 @@
+import React from "react";
+import { Router } from "@reach/router";
+import "./index.css";
+import Footer from "../Footer";
+import Header from "../Header";
+import PersonalDetails from "../PersonalDetails";
+import SiteDetails from "../SiteDetails";
+import Summary from "../Summary";
+import GoogleMap from "../GoogleMap";
+import { DetailsProvider } from "../DetailsContext";
+import Thanks from "../Thanks";
+import Login from "../Login";
+import Otp from "../Otp";
+import Dashboard from "../Dashboard"
+
+function PersonalDetails1() {
+  return (
+    <div className="details">
+      <Header />
+      <PersonalDetails />
+      {/* <Footer /> */}
+    </div>
+  )
+}
+function SiteDetails1() {
+  return (
+    <div className="details">
+      <Header />
+      <SiteDetails />
+      {/* <Footer /> */}
+    </div>
+  )
+}
+function GoogleMap1() {
+  return (
+    <div className="details">
+      <Header />
+      <GoogleMap />
+      {/* <Footer /> */}
+    </div>
+  )
+}
+function Summary1() {
+  return (
+    <div className="details">
+      <Header />
+      <Summary />
+      {/* <Footer /> */}
+    </div>
+  )
+}
+function Login1() {
+  return (
+    <div className="details">
+      <Header />
+      <Login />
+      {/* <Footer /> */}
+    </div>
+  )
+}
+function Otp1({ location }) {
+  return (
+    <div className="details">
+      <Header />
+      <Otp location={location} />
+      {/* <Footer /> */}
+    </div>
+  )
+}
+function Dashboard1({ location }) {
+  return (
+    <div className="details">
+      <Header />
+      <Dashboard location={location}/>
+      {/* <Footer /> */}
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <DetailsProvider>
+      <div className="app">
+        <Router>
+          <SiteDetails1 path="/siteDetails" />
+          <Summary1 path="/confirmDetails" />
+          <GoogleMap1 path="selectArea" />
+          <Thanks path="/complete" />
+          <Login1 path="/login" />
+          <Otp1 path="/otp" />
+          <Dashboard1 path="/dashboard" />
+          <PersonalDetails1 path="/" />
+        </Router>
+      </div>
+    </DetailsProvider>
+  );
+}
+
+export default App;

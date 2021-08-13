@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap");
+* {
+  font-family: "Poppins", sans-serif !important;
+  margin: 0;
+}
+.appHeader {
+  position: sticky;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3e663400;
+  overflow: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #34508d;
+  border-radius: 50px;
+  padding: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #34508d;
+}
+::-webkit-input-placeholder {
+  color: #383e56 !important;
+}
+hr {
+  color: #34508d !important;
+}
+.studentAccount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.others {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

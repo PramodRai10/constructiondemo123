@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0% 0%;
+
+}
+.login{
+    height: 100vh;
+}
+
+.loginTopHeading{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    font-weight: 900;
+    color: #082032;
+}
+span{
+    color:#7C83FD;
+}
+.loginImg{
+
+    width: 40%;
+    height: auto;
+    margin-left: 25rem;
+    margin-top: -0.4rem;
+}
+
+.login_Line{
+    width: 45%;
+    margin-left: 22rem;
+    
+}
+.emailInput{
+    width: 32%;
+    height: 3rem;
+    margin-left: 28rem;
+    border: 2px solid #B2B1B9;
+    outline-color: #7C83FD;
+    border-radius: 5px;
+
+}
+
+.login_Otp{
+
+    width: 34%;
+    height: 3rem;
+    margin-left: 27.5rem;
+    border: 2px solid #7C83FD;
+    outline-color: #7C83FD;
+    margin-top: 1rem;
+    background-color: #7C83FD;
+    margin-bottom: 3rem;
+    color: #fff;
+    font-weight: 400;
+
+}
+
+.login_Otp:hover{
+    background-color: #082032;
+    outline-color: #082032;
+    border: 2px solid #7C83FD}
+
+
+
+
+@media screen and (max-width:730px) {
+
+    .loginTopHeading{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6vw;
+        font-weight: 900;
+        margin-top: 1rem;
+    color: #082032;
+    
+    
+    
+    }
+
+    .loginImg{
+
+        width: 100%;
+        height: auto;
+        margin-left: 2%;
+        margin-top: 2rem;
+        
+    }
+
+    .login_Line{
+        width: 50%;
+        margin-left:28%;
+        
+    }
+    .emailInput{
+        width: 45%;
+        height: 3rem;
+        margin-left: 30%;
+        border: 2px solid #B2B1B9;
+        outline-color: #7C83FD;
+        border-radius: 5px;
+    
+    }
+
+    .login_Otp{
+
+        width: 49%;
+        height: 3rem;
+        margin-left: 28%;
+        border: 2px solid #7C83FD;
+        outline-color: #7C83FD;
+        margin-top: 1rem;
+        background-color: #7C83FD;
+        margin-bottom: 3rem;
+        color: #fff;
+        font-weight: 400;
+    
+    }
+    
+}

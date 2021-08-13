@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.topHead{
+    height: 80vh;
+    background-image: linear-gradient(to right, #120E43 , #2827CC);
+}
+
+.TopHeading{
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    font-size: 4vw;
+    font-weight: 800;
+}
+
+@media screen and (max-width:730px){
+
+   .TopHeading{
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    font-size: 5vw;
+    font-weight: 800;
+} 
+}
