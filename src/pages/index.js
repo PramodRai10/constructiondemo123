@@ -19,7 +19,7 @@ function PersonalDetails1() {
     <div className="details">
       <Header />
       <PersonalDetails />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -28,7 +28,7 @@ function SiteDetails1() {
     <div className="details">
       <Header />
       <SiteDetails />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -37,7 +37,7 @@ function GoogleMap1() {
     <div className="details">
       <Header />
       <GoogleMap />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -46,7 +46,7 @@ function Summary1() {
     <div className="details">
       <Header />
       <Summary />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -55,7 +55,7 @@ function Login1() {
     <div className="details">
       <Header />
       <Login />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -64,7 +64,7 @@ function Otp1({ location }) {
     <div className="details">
       <Header />
       <Otp location={location} />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -73,7 +73,7 @@ function Dashboard1({ location }) {
     <div className="details">
       <Header />
       <Dashboard location={location}/>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
@@ -82,7 +82,7 @@ function Details1({ location }) {
     <div className="details">
       <Header />
       <Details location={location}/>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
