@@ -2,15 +2,17 @@ import React from "react";
 import "./dashboard.css";
 import Card from "./Card";
 import "./card.css";
+import moment from "moment";
 
 function CreateCard(user) {
-
+  let address = `House Number/Name: ${user.house_number}, Street Name: ${user.street_name}, Town Name: ${user.town_name}, PostCode: ${user.postcode}`;
+  console.log(user)
   return <Card
     status={user.status}
     companyname={user.company_name}
-    address={user.house_number}
-    DateOfSubmissoin={user.DateOfSubmissoin}
-    viewDetails={user.viewDetails}
+    address={address}
+    DateOfSubmissoin={moment(user.createdAt).format('MM-DD-YYYY')}
+    viewDetails={user}
   />
 
 }

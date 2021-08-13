@@ -48,6 +48,7 @@
     "google-map-react": "^2.1.10",
     "googleapis": "^84.0.0",
     "http-proxy-middleware": "^2.0.0",
+    "moment": "^2.29.1",
     "mongodb-client-encryption": "^1.2.5",
     "mongoose": "^5.12.14",
     "morgan": "^1.10.0",
