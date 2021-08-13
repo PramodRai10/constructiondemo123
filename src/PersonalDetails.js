@@ -20,8 +20,9 @@ function PersonalDetails() {
         tel: '',
     })
 
-    const [details, setDetails] = useContext(DetailsContext)
-
+    // const [details, setDetails] = useContext(DetailsContext)
+    let obj = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    const [details, setDetails] = useState(obj);
     // useEffect(()=>{
     //     localStorage.setItem('constructionUser', JSON.stringify(details));
     // }, [details])
@@ -36,6 +37,7 @@ function PersonalDetails() {
             let phone = document.querySelector("#phone").value;
 
             if (fullName != "" && companyName != "" && emailId != "" && phone != "" && phone.length == 11) {
+                localStorage.setItem('constructionUser', JSON.stringify(details));
                 navigate("/siteDetails")
             } else {
                 console.log('Some Inputs are not filled');

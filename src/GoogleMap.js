@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DetailsContext } from "./DetailsContext";
 import { DrawingManager } from '@react-google-maps/api';
 import { navigate } from "@reach/router";
@@ -49,7 +49,10 @@ const center = {
 };
 
 export default function GoogleMap2() {
-    const [details, setDetails] = useContext(DetailsContext);
+    // const [details, setDetails] = useContext(DetailsContext);
+    let obj = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    const [details, setDetails] = useState(obj);
+
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_API_KEY,
         libraries,
@@ -107,7 +110,8 @@ export default function GoogleMap2() {
                 setDetails({
                     ...details, image_url: data1.body
                 });
-                navigate("/confirmDetails")
+                localStorage.setItem('constructionUser', JSON.stringify(details));
+                navigate("/confirmDetails");
             })
             .catch(function (error) {
                 console.log(error)

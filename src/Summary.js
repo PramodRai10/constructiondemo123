@@ -1,6 +1,5 @@
 import { navigate } from '@reach/router';
-import React, { useContext } from 'react';
-import { DetailsContext } from "./DetailsContext";
+import React from 'react';
 import axios from "axios";
 import qs from "qs";
 import './Spinner.css';
@@ -9,32 +8,10 @@ import "./PersonalDetails.css";
 import './success.css';
 import topImg from "./images/topImg.jpg";
 import img_2 from "./images/img_2.jpg";
-import { MicNone } from '@material-ui/icons';
 
 function Summary() {
-    const [details, setDetails] = useContext(DetailsContext);
-
+    let details = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
     function post_data(e) {
-        // document.querySelector('.cont').style.display = 'block';
-        // fetch(process.env.REACT_APP_ROUTE, {
-        //     method: 'POST',
-        //     body: JSON.stringify(details),
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     }
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if ((data['statusCode'] == 200)) {
-        //             navigate('/complete')
-        //         }
-        //         else {
-        //             //console.log(data);
-        //             navigate('/')
-        //             alert('Something went wrong, Please try Again')
-        //         }
-
-        //     });
         e.preventDefault();
         document.querySelector('.cont').style.display = 'block';
         var data = qs.stringify(details);
@@ -54,6 +31,7 @@ function Summary() {
                 data1 = JSON.parse(data1);
                 console.log(data1);
                 if (data1.statusCode == 200) {
+                    localStorage.removeItem('constructionUser');
                     navigate('/complete')
                 }
                 else {

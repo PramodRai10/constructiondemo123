@@ -10,11 +10,13 @@ function SiteDetails() {
         post_code: ''
     })
 
-    const [details, setDetails] = useContext(DetailsContext);
+    // const [details, setDetails] = useContext(DetailsContext);
+    let obj = localStorage.getItem('constructionUser') ? JSON.parse(localStorage.getItem('constructionUser')) : {};
+    const [details, setDetails] = useState(obj);
 
-    useEffect(()=>{
-        localStorage.setItem('constructionUser', JSON.stringify(details));
-    }, [details]);
+    // useEffect(()=>{
+    //     localStorage.setItem('constructionUser', JSON.stringify(details));
+    // }, [details]);
 
     function handleChange(e) {
         setDetails({
@@ -33,11 +35,12 @@ function SiteDetails() {
             let townName = document.querySelector("#town_name").value;
 
             if (houseNumber != "" && streetName != "" && townName != "") {
-                console.log(details)
+                //console.log(details);
+                localStorage.setItem('constructionUser', JSON.stringify(details));
                 navigate("/selectArea")
             } else {
                 console.log('Some Inputs are not filled');
-                alert('Please fill all inputs')
+                alert('Please fill all inputs');
             }
         } else {
             console.log('Inputs are not correct');
