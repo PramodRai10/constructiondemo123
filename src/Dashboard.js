@@ -8,7 +8,7 @@ function CreateCard(user) {
   return <Card
     status={user.status}
     companyname={user.company_name}
-    address={"House Number: "+user.house_number,}
+    address={user.house_number}
     DateOfSubmissoin={user.DateOfSubmissoin}
     viewDetails={user.viewDetails}
   />
