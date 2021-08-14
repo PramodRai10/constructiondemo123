@@ -59,25 +59,25 @@ function Login1() {
     </div>
   )
 }
-function Otp1({ location }) {
+function Otp1() {
   return (
     <div className="details">
       <Header />
-      <Otp location={location} />
+      <Otp/>
       <Footer />
     </div>
   )
 }
-function Dashboard1({ location }) {
+function Dashboard1() {
   return (
     <div className="details">
       <Header />
-      <Dashboard location={location}/>
+      <Dashboard/>
       <Footer />
     </div>
   )
 }
-function Details1({ location }) {
+function Details1({location}) {
   return (
     <div className="details">
       <Header />

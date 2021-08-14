@@ -1,11 +1,17 @@
 /* global google */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { DrawingManager } from "@react-google-maps/api";
 import { DetailsContext } from "./DetailsContext"
 
 const DrawingComponent = () => {
 
-    const [details, setDetails] = useContext(DetailsContext);
+    let obj = window.localStorage.getItem('constructionUser');
+    if(typeof(obj)=="string"){
+        obj = JSON.parse(obj);
+    }else{
+        obj = {};
+    }
+    const [details, setDetails] = useState(obj);
     const onLoad = (drawingManager) => {
         console.log("drawingManager", drawingManager);
     };
@@ -13,7 +19,7 @@ const DrawingComponent = () => {
     const onPolygonComplete = (polygon) => {
         var polygonBounds = polygon.getPath();
 
-        console.log(polygonBounds.getNorthEast());
+        //console.log(polygonBounds.getNorthEast());
         console.log(polygon);
         var bounds = [];
         var link_str = "https://maps.googleapis.com/maps/api/staticmap?size=640x640&path=";
@@ -27,15 +33,20 @@ const DrawingComponent = () => {
         }
         link_str += `${bounds[0].lat},${bounds[0].lng}`
         link_str += `&sensor=false&key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}`
-        //console.log(link_str);
+        console.log(link_str);
         var result = parseFloat(window.google.maps.geometry.spherical.computeArea(polygon.getPath())) * 0.000247105;
         var area = result.toFixed(4);
         //console.log(bounds);
 
         //console.log(area);
-        setDetails({
+        let obj2 = {
             ...details, map_coordinates: bounds, shape: 'Polygon', area: area, image_url_api: link_str
-        });
+        }
+        // setDetails({
+        //     ...details, map_coordinates: bounds, shape: 'Polygon', area: area, image_url_api: link_str
+        // });
+        console.log(obj2);
+        window.localStorage.setItem('constructionUser', JSON.stringify(obj2));
         // polygon.setMap(null);
     };
     // const onCircleComplete = (circle) => {
@@ -97,7 +108,7 @@ const DrawingComponent = () => {
         <DrawingManager
             onLoad={onLoad}
             drawingMode="polygon"
-            onCircleComplete={onPolygonComplete}
+            onPolygonComplete={onPolygonComplete}
             options={{
                 drawingControl: true,
                 drawingControlOptions: {

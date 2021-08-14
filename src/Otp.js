@@ -8,75 +8,87 @@ import axios from "axios";
 import qs from "qs";
 
 
-function Otp({ location }) {
-  const [details, setDetails] = useContext(DetailsContext);
+function Otp() {
+  //const [details, setDetails] = useContext(DetailsContext);
+  let obj = window.localStorage.getItem('user_login');
+  if (typeof (obj) == "string") {
+      obj = JSON.parse(obj);
+  } else {
+      obj = {};
+  }
+  async function getQueries(obj1) {
+    document.querySelector('.cont').style.display = 'block';
+    var data = qs.stringify({ email: obj1.email });
+    var config = {
+      method: 'post',
+      url: process.env.GATSBY_APP_HEROKU + '/getDetails',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: data
+    };
 
+    axios(config)
+      .then(function (response) {
+        //console.log(JSON.stringify(response.data));
+        let data1 = JSON.stringify(response.data);
+        data1 = JSON.parse(data1);
+        console.log(data1);
+        if (data1.statusCode == 200) {
+          console.log(data1);
+          obj1.data = data1.body;
+          window.localStorage.setItem('user_login', JSON.stringify(obj1));
+          navigate('/dashboard');
+        }
+        else {
+          document.querySelector('.cont').style.display = 'none';
+          alert('Something went wrong, Please try Again')
+          navigate('/otp')
+        }
+      })
+      .catch(function (error) {
+        console.log(error)
+        document.querySelector('.cont').style.display = 'none';
+        alert('Something went wrong, Please try Again')
+        navigate('/otp')
+      });
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     let user_otp = document.querySelector('#otp').value;
-    let org_otp = location ? location.state.otp : '';
+    // let org_otp = location ? location.state.otp : '';
     if (user_otp != '') {
-      if (user_otp == org_otp) {
-        //alert('Correct OTP');
-        // document.querySelector('.cont').style.display = 'block';
-        // fetch(process.env.REACT_APP_ROUTE + '/getDetails', {
-        //   method: 'POST',
-        //   body: JSON.stringify({ email: details.email }),
-        //   headers: {
-        //     'Content-type': 'application/json'
-        //   }
-        // })
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     console.log(data);
-        //     if ((data['statusCode'] == 200)) {
-        //       console.log(data);
-        //       //navigate('/', { state: { user: data } });
-        //     }
-        //     else {
-        //       //console.log(data);
-        //       document.querySelector('.cont').style.display = 'none';
-        //       alert('Something went wrong, Please try Again')
-        //       navigate('/otp')
-        //     }
-
-        //   });
-        document.querySelector('.cont').style.display = 'block';
-        var data = qs.stringify({ email: details.email });
-        var config = {
-            method: 'post',
-            url: process.env.GATSBY_APP_HEROKU + '/getDetails',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            data: data
-        };
-
-        axios(config)
-            .then(function (response) {
-                //console.log(JSON.stringify(response.data));
-                let data1 = JSON.stringify(response.data);
-                data1 = JSON.parse(data1);
-                console.log(data1);
-                if (data1.statusCode == 200) {
-                  console.log(data1);
-                  navigate('/dashboard', { state: { data: data1.body } });
-                }
-                else {
-                  document.querySelector('.cont').style.display = 'none';
-                  alert('Something went wrong, Please try Again')
-                  navigate('/otp')
-                }
-            })
-            .catch(function (error) {
-                console.log(error)
-                document.querySelector('.cont').style.display = 'none';
-                alert('Something went wrong, Please try Again')
-                navigate('/otp')
-            });
-      } else {
-        alert('Wrong OTP');
-      }
+      var data = qs.stringify({
+        'email': obj.email
+      });
+      var config = {
+        method: 'post',
+        url: process.env.GATSBY_APP_HEROKU + '/verifyOtp',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: data
+      };
+      console.log(data);
+      axios(config)
+        .then(function (response) {
+          //console.log(JSON.stringify(response.data));
+          let data1 = JSON.stringify(response.data);
+          console.log(data1);
+          data1 = JSON.parse(data1);
+          let org_otp = data1.body;
+          if(org_otp == user_otp){
+            getQueries(obj);
+          }else{
+            alert('Wrong OTP');
+          }
+        })
+        .catch(function (error) {
+          console.log(error)
+          alert('Something went wrong, Please try Again')
+          document.querySelector('.cont').style.display = 'none';
+          navigate('/selectArea')
+        });
     } else {
       alert('Please fill input');
     }

@@ -52,14 +52,14 @@ const options = {
 export default function GoogleMap2() {
     // const [details, setDetails] = useContext(DetailsContext);
     let obj = window.localStorage.getItem('constructionUser');
-    if(typeof(obj)=="string"){
+    if (typeof (obj) == "string") {
         obj = JSON.parse(obj);
-    }else{
+    } else {
         obj = {};
     }
     const [details, setDetails] = useState(obj);
 
-    let center = details.postcode_center ? details.postcode_center: {
+    let center = details.postcode_center ? details.postcode_center : {
         lat: 53.958332,
         lng: -1.080278,
     };
@@ -97,10 +97,17 @@ export default function GoogleMap2() {
     if (!isLoaded) return "Loading...";
 
     async function handleSubmit(e) {
+        obj = window.localStorage.getItem('constructionUser');
+        if (typeof (obj) == "string") {
+            obj = JSON.parse(obj);
+        } else {
+            obj = {};
+        }
         e.preventDefault();
         document.querySelector('.cont').style.display = 'block';
+        console.log(obj);
         var data = qs.stringify({
-            'url': details.image_url_api
+            'url': obj.image_url_api
         });
         var config = {
             method: 'post',
@@ -110,7 +117,7 @@ export default function GoogleMap2() {
             },
             data: data
         };
-
+        console.log(data);
         axios(config)
             .then(function (response) {
                 //console.log(JSON.stringify(response.data));
@@ -119,10 +126,11 @@ export default function GoogleMap2() {
                 data1 = JSON.parse(data1);
                 console.log(data1.body)
 
-                setDetails({
-                    ...details, image_url: data1.body
-                });
-                window.localStorage.setItem('constructionUser', JSON.stringify(details));
+                // setDetails({
+                //     ...details, image_url: data1.body
+                // });
+                obj.image_url = data1.body;
+                window.localStorage.setItem('constructionUser', JSON.stringify(obj));
                 navigate("/confirmDetails");
             })
             .catch(function (error) {

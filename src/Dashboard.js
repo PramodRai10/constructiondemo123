@@ -14,11 +14,16 @@ function CreateCard(user) {
     DateOfSubmissoin={moment(user.createdAt).format('MM-DD-YYYY')}
     viewDetails={user}
   />
-
 }
 
-function Dashboard({ location }) {
-  let arr = JSON.parse(location.state.data);
+function Dashboard() {
+  let obj = window.localStorage.getItem('user_login');
+  if (typeof (obj) == "string") {
+      obj = JSON.parse(obj);
+  } else {
+      obj = {};
+  }
+  let arr = JSON.parse(obj.data);
   return (
     <div>
       <div className="topHead">
