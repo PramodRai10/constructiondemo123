@@ -44,20 +44,31 @@ const options = {
     disableDefaultUI: true,
     zoomControl: true,
 };
-const center = {
-    lat: 53.958332,
-    lng: -1.080278,
-};
+// let center = {
+//     lat: 53.958332,
+//     lng: -1.080278,
+// };
 
 export default function GoogleMap2() {
     // const [details, setDetails] = useContext(DetailsContext);
-    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser');
+    if(typeof(obj)=="string"){
+        obj = JSON.parse(obj);
+    }else{
+        obj = {};
+    }
     const [details, setDetails] = useState(obj);
 
+    let center = details.postcode_center ? details.postcode_center: {
+        lat: 53.958332,
+        lng: -1.080278,
+    };
+    console.log(details.postcode_center)
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_API_KEY,
         libraries,
     });
+
     const [markers, setMarkers] = React.useState([]);
     const [selected, setSelected] = React.useState(null);
 
@@ -107,7 +118,7 @@ export default function GoogleMap2() {
                 console.log(data1);
                 data1 = JSON.parse(data1);
                 console.log(data1.body)
-                
+
                 setDetails({
                     ...details, image_url: data1.body
                 });
@@ -129,7 +140,7 @@ export default function GoogleMap2() {
             <GoogleMap
                 id="map"
                 mapContainerStyle={mapContainerStyle}
-                zoom={8}
+                zoom={13}
                 center={center}
                 options={options}
                 onClick={onMapClick}

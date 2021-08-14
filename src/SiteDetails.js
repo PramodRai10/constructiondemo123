@@ -5,6 +5,7 @@ import axios from "axios";
 import "./PersonalDetails.css";
 import topImg from "./images/Img_3.jpg";
 import { window, document } from "browser-monads";
+import qs from "qs";
 
 function SiteDetails() {
     var [error, setError] = useState({
@@ -12,7 +13,13 @@ function SiteDetails() {
     })
 
     // const [details, setDetails] = useContext(DetailsContext);
-    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    //let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser');
+    if(typeof(obj)=="string"){
+        obj = JSON.parse(obj);
+    }else{
+        obj = {};
+    }
     const [details, setDetails] = useState(obj);
 
     // useEffect(()=>{
@@ -37,8 +44,37 @@ function SiteDetails() {
 
             if (houseNumber != "" && streetName != "" && townName != "") {
                 //console.log(details);
-                window.localStorage.setItem('constructionUser', JSON.stringify(details));
-                navigate("/selectArea")
+                var postcode = details.postcode ? details.postcode : 'MK10 9RP';
+                var data = qs.stringify({
+
+                });
+                var config = {
+                    method: 'get',
+                    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${postcode}&key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}`,
+                    headers: {},
+                    data: data
+                };
+                //let { isLoaded, loadError } = {isLoaded: null, loadError: null};
+               
+                axios(config)
+                    .then(function (response) {
+                        console.log(response.data)
+                        // console.log(JSON.stringify(response.data));
+                        let result = response.data.results[0].geometry.location;
+                        // setDetails({
+                        //     ...details, postcode_center: '847301'
+                        // });
+                        var obj1=details;
+                        obj1.postcode_center = result;
+                        // console.log(result)
+                        console.log(obj1);
+                        window.localStorage.setItem('constructionUser', JSON.stringify(obj1));
+                        navigate("/selectArea")
+                        
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             } else {
                 console.log('Some Inputs are not filled');
                 alert('Please fill all inputs');

@@ -11,7 +11,13 @@ import topImg from "./images/topImg.jpg";
 import img_2 from "./images/img_2.jpg";
 
 function Summary() {
-    let details = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    //let details = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    let details = window.localStorage.getItem('constructionUser');
+    if(typeof(details)=="string"){
+        details = JSON.parse(details);
+    }else{
+        details = {};
+    }
     function post_data(e) {
         e.preventDefault();
         document.querySelector('.cont').style.display = 'block';

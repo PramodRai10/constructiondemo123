@@ -22,7 +22,13 @@ function PersonalDetails() {
     })
 
     // const [details, setDetails] = useContext(DetailsContext)
-    let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    // let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
+    let obj = window.localStorage.getItem('constructionUser');
+    if(typeof(obj)=="string"){
+        obj = JSON.parse(obj);
+    }else{
+        obj = {};
+    }
     const [details, setDetails] = useState(obj);
     // useEffect(()=>{
     //     localStorage.setItem('constructionUser', JSON.stringify(details));
