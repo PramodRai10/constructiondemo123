@@ -118,7 +118,7 @@ export default function GoogleMap2() {
             },
             data: data
         };
-        console.log(data);
+        //console.log(data);
         axios(config)
             .then(function (response) {
                 //console.log(JSON.stringify(response.data));

@@ -78,7 +78,7 @@ function Summary() {
 
                 <h4>Map Coordinates:
                     <ul>
-                        {details.map_coordinates != null && details.map_coordinates.map((e) => {
+                        {details.map_coordinates != null && JSON.parse(details.map_coordinates).map((e) => {
                             return (<li>
                                 lat : {e.lat}<br></br>
                                 lng : {e.lng}

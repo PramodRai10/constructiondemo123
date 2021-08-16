@@ -37,11 +37,12 @@ const DrawingComponent = () => {
         var result = parseFloat(window.google.maps.geometry.spherical.computeArea(polygon.getPath())) * 0.000247105;
         var area = result.toFixed(4);
         //console.log(bounds);
-
+        //console.log(bounds);
         //console.log(area);
         let obj2 = {
-            ...details, map_coordinates: bounds, shape: 'Polygon', area: area, image_url_api: link_str
+            ...details, map_coordinates: JSON.stringify(bounds), shape: 'Polygon', area: area, image_url_api: link_str
         }
+        //console.log(obj2)
         // setDetails({
         //     ...details, map_coordinates: bounds, shape: 'Polygon', area: area, image_url_api: link_str
         // });
