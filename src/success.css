@@ -7,7 +7,7 @@ body{
 }
 
 .successText{
-    height:100vh;
+    height:78vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@ h4{
     height: 2.5rem;
     width: 7rem;
 }
-
+/* 
 .btn_home{
     background-color: transparent;
     border: 2px solid #867AE9;
@@ -64,4 +64,28 @@ h4{
 .btn_home:hover{
     color: #d32c2c;
     outline: 0;
+} */
+
+.btn_home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #867AE9;
+    border-radius: 0.6em;
+    font-size: 1rem;
+    height: 2.5rem;
+    width: 5rem;
+    background-color: #47597E;
+    font-weight: bolder;
+    cursor:pointer;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.btn_home:hover{
+
+    color:#fff;
+    background-color: #7C83FD;
 }

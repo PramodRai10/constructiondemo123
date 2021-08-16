@@ -25,7 +25,7 @@ function Dashboard() {
   }
   let arr = JSON.parse(obj.data);
   return (
-    <div>
+    <div className="dashboard_body">
       <div className="topHead">
         <h1 className="TopHeading">Find all Your Queries Here!</h1>
 

@@ -86,6 +86,15 @@ function Details1({location}) {
     </div>
   )
 }
+function Thanks1() {
+  return (
+    <div className="details">
+      <Header />
+      <Thanks />
+      <Footer />
+    </div>
+  )
+}
 
 function App() {
   return (
@@ -95,7 +104,7 @@ function App() {
           <SiteDetails1 path="/siteDetails" />
           <Summary1 path="/confirmDetails" />
           <GoogleMap1 path="selectArea" />
-          <Thanks path="/complete" />
+          <Thanks1 path="/complete" />
           <Login1 path="/login" />
           <Otp1 path="/otp" />
           <Dashboard1 path="/dashboard" />

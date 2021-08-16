@@ -5,6 +5,11 @@ import axios from "axios";
 import "./PersonalDetails.css";
 import topImg from "./images/Img_3.jpg";
 import { window, document } from "browser-monads";
+import { BsFillHouseDoorFill } from 'react-icons/bs';
+import { SiGooglestreetview } from 'react-icons/si';
+import { MdLocationCity } from 'react-icons/md';
+import { MdLocalPostOffice } from 'react-icons/md';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 import qs from "qs";
 
 function SiteDetails() {
@@ -15,9 +20,9 @@ function SiteDetails() {
     // const [details, setDetails] = useContext(DetailsContext);
     //let obj = window.localStorage.getItem('constructionUser') ? JSON.parse(window.localStorage.getItem('constructionUser')) : {};
     let obj = window.localStorage.getItem('constructionUser');
-    if(typeof(obj)=="string"){
+    if (typeof (obj) == "string") {
         obj = JSON.parse(obj);
-    }else{
+    } else {
         obj = {};
     }
     const [details, setDetails] = useState(obj);
@@ -55,22 +60,29 @@ function SiteDetails() {
                     data: data
                 };
                 //let { isLoaded, loadError } = {isLoaded: null, loadError: null};
-               
+
                 axios(config)
                     .then(function (response) {
                         console.log(response.data)
                         // console.log(JSON.stringify(response.data));
-                        let result = response.data.results[0].geometry.location;
-                        // setDetails({
-                        //     ...details, postcode_center: '847301'
-                        // });
-                        var obj1=details;
-                        obj1.postcode_center = result;
-                        // console.log(result)
-                        console.log(obj1);
-                        window.localStorage.setItem('constructionUser', JSON.stringify(obj1));
-                        navigate("/selectArea")
-                        
+                        console.log(response.data)
+                        if (response.data.results.length > 0) {
+                            let result = response.data.results[0].geometry.location;
+                            let place = response.data.results[0].formatted_address;
+                            // setDetails({
+                            //     ...details, postcode_center: '847301'
+                            // });
+                            var obj1 = details;
+                            obj1.postcode_center = result;
+                            obj1.place = place;
+                            // console.log(result)
+                            console.log(obj1);
+                            window.localStorage.setItem('constructionUser', JSON.stringify(obj1));
+                            navigate("/selectArea")
+                        }else{
+                            alert('Please fill valid postcode');
+                        }
+
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -93,17 +105,17 @@ function SiteDetails() {
                 <div className="secondForm">
 
                     {/* <h4>Property/House Number or Name:</h4> */}
-                    <input type="text" placeholder="Enter the house number or name" id="house_number" className="topInput" value={details.house_number} name="house_number" onChange={handleChange}></input>
+                    <BsFillHouseDoorFill className="textBox_icons" /><input type="text" placeholder="Enter the house number or name" id="house_number" className="topInput" value={details.house_number} name="house_number" onChange={handleChange}></input>
 
                     {/* <h4>Street Name:</h4> */}
-                    <input type="text" placeholder="Enter the street name" id="street_name" className="topInput" value={details.street_name} name="street_name" onChange={handleChange}></input>
+                    <SiGooglestreetview className="textBox_icons" /><input type="text" placeholder="Enter the street name" id="street_name" className="topInput" value={details.street_name} name="street_name" onChange={handleChange}></input>
 
                     {/* <h4>Town:</h4> */}
                     <br></br>
-                    <input type="text" placeholder="Enter town" id="town_name" className="topInput" value={details.town_name} name="town_name" onChange={handleChange}></input>
+                    <MdLocationCity className="textBox_icons" /><input type="text" placeholder="Enter town" id="town_name" className="topInput" value={details.town_name} name="town_name" onChange={handleChange}></input>
 
                     {/* <h4>Enter the PostCode of area:</h4> */}
-                    <input type="text" placeholder="Enter the PostCode" id="postcode" className="topInput" value={details.postcode} name="postcode" onChange={
+                    <MdLocalPostOffice className="textBox_icons" /><input type="text" placeholder="Enter the PostCode" id="postcode" className="topInput" value={details.postcode} name="postcode" onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -132,7 +144,7 @@ function SiteDetails() {
                     }></input>
                     <span id="invalid_post_code" className="inavlid_input" style={{ display: "none" }}>Not a valid Post Code</span>
                 </div>
-                <button className="btn_submit construct" type="submit" onClick={handleSubmit}>Next</button>
+                <button className="btn_submit construct" type="submit" onClick={handleSubmit}><AiOutlineArrowRight /></button>
                 {/* <button className="btn_submit construct" type="submit" onClick={() => { navigate('/') }}>Back</button> */}
             </div>
             <div className="flex-right">

@@ -19,20 +19,22 @@
     background-color: #ffffffff;
 }
 .companyNAme{
-  font-size: 80%; 
+  font-size: 99%; 
   color: #185ADB;
   font-family: 'Poppins', sans-serif;
   margin-top: 4rem;
   margin-left: 0.5rem;
-
+  font-weight: 600;
 }
 .address{
  font-size: 1rem;
  margin-top: 5%;
+ font-weight: 400;
  margin-left: 0.5rem;;
 }
 .DateOfSubmissoin{
   font-size: 0.8rem;
+  font-weight: 300;
   margin-left: 00.5rem;
   margin-top: 1rem;
   font-family: 'Poppins', sans-serif;
@@ -60,8 +62,13 @@
   
   width: 7.5rem;
   height: 2.5rem;
-  margin-left: 00.5rem;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
+  background-color: #0F52BA;
+  color: #fff;
+  border-radius: 2px;
+
 
 
 }

@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* .dashboard_body{
+
+    height: auto;
+} */
 
 .topHead{
     height: 80vh;
-    background-image: linear-gradient(to right, #120E43 , #2827CC);
+    background-image: linear-gradient(to right, #7C83FD , #4e56f5);
 }
 
 .TopHeading{

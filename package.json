@@ -65,6 +65,7 @@
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
     "react-lottie": "^1.2.3",
     "react-multiple-select-dropdown-lite": "^2.0.4",
     "react-particle-animation": "^2.0.2",

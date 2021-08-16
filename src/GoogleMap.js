@@ -36,7 +36,7 @@ import qs from "qs";
 
 const libraries = ["places", "drawing", "geometry"];
 const mapContainerStyle = {
-    height: "75vh",
+    height: "85vh",
     width: "100vw",
 };
 const options = {
@@ -48,7 +48,7 @@ const options = {
 //     lat: 53.958332,
 //     lng: -1.080278,
 // };
-
+let place = '';
 export default function GoogleMap2() {
     // const [details, setDetails] = useContext(DetailsContext);
     let obj = window.localStorage.getItem('constructionUser');
@@ -58,6 +58,7 @@ export default function GoogleMap2() {
         obj = {};
     }
     const [details, setDetails] = useState(obj);
+    place = details.place ? details.place : ''
 
     let center = details.postcode_center ? details.postcode_center : {
         lat: 53.958332,
@@ -141,14 +142,14 @@ export default function GoogleMap2() {
             });
     }
     return (
-        <div>
+        <div className="g-map">
             {/* <Locate panTo={panTo} /> */}
             <Search panTo={panTo} />
 
             <GoogleMap
                 id="map"
                 mapContainerStyle={mapContainerStyle}
-                zoom={13}
+                zoom={18}
                 center={center}
                 options={options}
                 onClick={onMapClick}
@@ -213,10 +214,11 @@ function Search({ panTo }) {
             radius: 100 * 1000,
         },
     });
-
+    
     // https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service#AutocompletionRequest
 
     const handleInput = (e) => {
+        place = '';
         setValue(e.target.value);
     };
 
@@ -232,12 +234,11 @@ function Search({ panTo }) {
             console.log("😱 Error: ", error);
         }
     };
-
     return (
         <div className="search">
             <Combobox onSelect={handleSelect}>
                 <ComboboxInput
-                    value={value}
+                    value={value=='' ? place:value}
                     onChange={handleInput}
                     disabled={!ready}
                     placeholder="Search your location"

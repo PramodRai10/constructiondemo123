@@ -1,4 +1,4 @@
-header {
+  header {
     background-color: #F9F9F9;
     margin: auto -16px;
     padding: 16px 32px;
@@ -12,19 +12,25 @@ header {
   }
 
   .buttonHeader {
-    background-color: #867AE9; 
-    border: none;
-    color: #ffffff;
-    padding: 10px 25px;
+    background-color: #ffffffff; 
+    border: 1px solid #4750ff;
+    color: #4750ff;
+    padding: 5px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     /* margin: 2px; */
     cursor: pointer;
-    border-radius: 15px;
-    margin-left: 58rem;
+    border-radius: 5px;
+    margin-left: 59rem;
     
+    
+  }
+  
+  .buttonHeader:hover{
+    background-color:#7C83FD ;
+    color: #fff;
   }
 
   .flex-box2{
@@ -55,9 +61,14 @@ header {
     .buttonHeader{
       padding: 5px 12px;
 
-      margin-left: 13rem;
+      margin-left: 19rem;
 
     }
+    .header-logo{
+      color: #0A1931;
+      margin-left: 0.5rem ;
+    
+  }
   }
 
   

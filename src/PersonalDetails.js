@@ -6,6 +6,11 @@ import "./PersonalDetails.css";
 import topImg from "./images/topImg.jpg";
 import img_2 from "./images/img_2.jpg";
 import { window, document } from "browser-monads";
+import {FaUserCheck} from 'react-icons/fa';
+import {AiFillTool} from 'react-icons/ai';
+import {MdEmail} from 'react-icons/md';
+import {FaPhoneAlt} from 'react-icons/fa';
+import {AiOutlineArrowRight} from 'react-icons/ai';
 
 
 const api = axios.create({
@@ -65,7 +70,7 @@ function PersonalDetails() {
 
                 {/* <h4>Enter your full name</h4> */}
                 <div className="secondForm">
-                    <input type="text" placeholder="Full Name" id="full_name" className="topInput" name="full_name" value={details.full_name} onChange={
+                <FaUserCheck className="textBox_icons"/> <input type="text" placeholder="Full Name" id="full_name" className="topInput" name="full_name" value={details.full_name} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -93,7 +98,7 @@ function PersonalDetails() {
                     <span id="invalid_name" className="inavlid_input" style={{ display: "none" }}>Not a valid name</span>
 
                     {/* <h4>Enter your company name</h4> */}
-                    <input type="text" placeholder="Company Name" id="company_name" className="topInput" name="company_name" value={details.company_name} onChange={
+                    <AiFillTool className="textBox_icons"/> <input type="text" placeholder="Company Name" id="company_name" className="topInput" name="company_name" value={details.company_name} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -124,7 +129,7 @@ function PersonalDetails() {
                 
                     {/* <h4>Enter your email id</h4> */}
                     <br></br>
-                    <input type="email" placeholder="Your mail" id="email_id" className="topInput" name="email" value={details.email} onChange={
+                    <MdEmail className="textBox_icons"/> <input type="email" placeholder="Your mail" id="email_id" className="topInput" name="email" value={details.email} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -153,7 +158,7 @@ function PersonalDetails() {
                     <span id="invalid_mail" className="inavlid_input" style={{ display: "none" }}>Not a valid mail</span>
 
                     {/* <h4>Enter your phone number</h4> */}
-                    <input type="text" placeholder="Your Phone" id="phone" className="topInput" name="phone" value={details.phone} onChange={
+                    <FaPhoneAlt className="textBox_icons"/> <input type="text" placeholder="Your Phone" id="phone" className="topInput" name="phone" value={details.phone} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -182,7 +187,7 @@ function PersonalDetails() {
                     <span className="inavlid_input" id="invalid_phone" style={{ display: "none"}}>Phone Number should be all digits and 11 character long</span>
                 </div>
 
-                <button className="btn_submit construct" type="submit" onClick={handleSubmit}><i class="fas fa-arrow-right"></i>Next</button>
+                <button className="btn_submit construct" type="submit" onClick={handleSubmit}><AiOutlineArrowRight /></button>
             </div>
             <div className="flex-right">
                 <img src={img_2} className="img_2"></img>

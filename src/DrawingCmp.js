@@ -33,7 +33,7 @@ const DrawingComponent = () => {
         }
         link_str += `${bounds[0].lat},${bounds[0].lng}`
         link_str += `&sensor=false&key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}`
-        console.log(link_str);
+        //console.log(link_str);
         var result = parseFloat(window.google.maps.geometry.spherical.computeArea(polygon.getPath())) * 0.000247105;
         var area = result.toFixed(4);
         //console.log(bounds);
@@ -45,7 +45,7 @@ const DrawingComponent = () => {
         // setDetails({
         //     ...details, map_coordinates: bounds, shape: 'Polygon', area: area, image_url_api: link_str
         // });
-        console.log(obj2);
+        //console.log(obj2);
         window.localStorage.setItem('constructionUser', JSON.stringify(obj2));
         // polygon.setMap(null);
     };
