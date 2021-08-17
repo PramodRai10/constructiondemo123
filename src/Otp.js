@@ -36,6 +36,7 @@ function Otp() {
         console.log(data1);
         if (data1.statusCode == 200) {
           console.log(data1);
+          delete data1.body['image_url_api'];
           obj1.data = data1.body;
           window.localStorage.setItem('user_login', JSON.stringify(obj1));
           navigate('/dashboard');
@@ -87,7 +88,7 @@ function Otp() {
           console.log(error)
           alert('Something went wrong, Please try Again')
           document.querySelector('.cont').style.display = 'none';
-          navigate('/selectArea')
+          //navigate('/selectArea')
         });
     } else {
       alert('Please fill input');

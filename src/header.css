@@ -10,12 +10,19 @@
       margin-left: 5.5rem ;
     
   }
+  .right-flex2{
+    display: flex;
+  }
 
-  .buttonHeader {
-    background-color: #ffffffff; 
+
+  #redirect-dash{
+   display: flex;
+   flex-direction: row;
+   margin-left: 5rem;
+   background-color: #ffffffff; 
     border: 1px solid #4750ff;
     color: #4750ff;
-    padding: 5px 15px;
+    padding: 2px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -23,15 +30,64 @@
     /* margin: 2px; */
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 59rem;
+    /* margin-left: 59rem; */
+    margin-left: 50rem;
+    
+  }
+
+#logoutBtn{
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffffff; 
+  border: 1px solid #4750ff;
+  color: #4750ff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 2px; */
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 25%;
+  
+  
+}
+  
+
+   #loginbtn{
+    background-color: #ffffffff; 
+    border: 1px solid #4750ff;
+    color: #4750ff;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 2px; */
+    cursor: pointer;
+    border-radius: 5px;
+    
+
+     margin-left: 59rem; 
     
     
   }
   
-  .buttonHeader:hover{
+  #loginbtn:hover{
     background-color:#7C83FD ;
     color: #fff;
   }
+  #logoutBtn:hover{
+    background-color:#7C83FD ;
+    color: #fff;
+  }
+
+  #redirect-dash:hover{
+    background-color:#7C83FD ;
+    color: #fff;
+  }
+
 
   .flex-box2{
 
@@ -58,11 +114,22 @@
 
   @media screen and (max-width:730px){
 
-    .buttonHeader{
-      padding: 5px 12px;
+    #loginbtn{
+      margin-left: 8rem;
+    }
 
-      margin-left: 19rem;
+    #redirect-dash{
+      
 
+      margin-left: 10%;
+
+    }
+
+    #logoutBtn{
+    
+
+      margin-left: 5%;
+      margin-right: 10%;
     }
     .header-logo{
       color: #0A1931;
@@ -70,7 +137,27 @@
     
   }
   }
+@media screen and (max-width:1230px)
+{
 
+  #loginbtn{
+    margin-left: 15rem;
+  }
+
+  #redirect-dash{
+      
+
+    margin-left: 90%;
+
+  }
+
+  #logoutBtn{
+  
+
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+}
   
 
   

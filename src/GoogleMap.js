@@ -36,7 +36,7 @@ import qs from "qs";
 
 const libraries = ["places", "drawing", "geometry"];
 const mapContainerStyle = {
-    height: "85vh",
+    height: "70vh",
     width: "100vw",
 };
 const options = {
@@ -64,7 +64,7 @@ export default function GoogleMap2() {
         lat: 53.958332,
         lng: -1.080278,
     };
-    console.log(details.postcode_center)
+    //console.log(details.postcode_center)
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_API_KEY,
         libraries,

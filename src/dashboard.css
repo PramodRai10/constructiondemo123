@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-/* .dashboard_body{
 
-    height: auto;
-} */
 
 .topHead{
     height: 80vh;
-    background-image: linear-gradient(to right, #7C83FD , #4e56f5);
+
+    
+    background-image: linear-gradient(to right, #7C83FD , #9295c9);
+
 }
 
 .TopHeading{
@@ -32,4 +32,22 @@
     font-size: 5vw;
     font-weight: 800;
 } 
+.topHead{
+
+    width:150%;
+}
+}
+
+@media screen and (max-width:1230px){
+
+    .TopHeading{
+        margin-right: 13rem;
+    }
+
+    .topHead{
+
+        width:150%;
+    }
+
+
 }

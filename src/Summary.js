@@ -36,7 +36,7 @@ function Summary() {
                 //console.log(JSON.stringify(response.data));
                 let data1 = JSON.stringify(response.data);
                 data1 = JSON.parse(data1);
-                console.log(data1);
+                //console.log(data1);
                 if (data1.statusCode == 200) {
                     window.localStorage.removeItem('constructionUser');
                     navigate('/complete')

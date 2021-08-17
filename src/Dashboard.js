@@ -6,12 +6,12 @@ import moment from "moment";
 
 function CreateCard(user) {
   let address = `House Number/Name: ${user.house_number}, Street Name: ${user.street_name}, Town Name: ${user.town_name}, PostCode: ${user.postcode}`;
-  console.log(user)
+  //console.log(user)
   return <Card
     status={user.status}
     companyname={user.company_name}
     address={address}
-    DateOfSubmissoin={moment(user.createdAt).format('MM-DD-YYYY')}
+    DateOfSubmissoin={moment(user.createdAt).format('DD-MM-YYYY')}
     viewDetails={user}
   />
 }

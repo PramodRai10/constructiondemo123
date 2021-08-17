@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 0rem;
-    background: linear-gradient(90deg,#7DEDFF,#47597E 100%);    
+    background-color: #867AE9;   
     
 }
 .successText > h1{
@@ -70,12 +70,13 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #867AE9;
+    border: 1px solid #1f1f1f;
     border-radius: 0.6em;
     font-size: 1rem;
     height: 2.5rem;
     width: 5rem;
-    background-color: #47597E;
+    background-color: #fff;
+    color: #0A1931;
     font-weight: bolder;
     cursor:pointer;
     font-family: "Montserrat";
