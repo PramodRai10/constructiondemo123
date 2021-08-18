@@ -13,6 +13,7 @@ import Login from "../Login";
 import Otp from "../Otp";
 import Dashboard from "../Dashboard"
 import Details from "../Details"
+import Gif from "../Gif"
 
 function PersonalDetails1() {
   return (
@@ -95,7 +96,15 @@ function Thanks1() {
     </div>
   )
 }
-
+function Gif1() {
+  return (
+    <div className="details">
+      <Header />
+      <Gif />
+      <Footer />
+    </div>
+  )
+}
 function App() {
   return (
     <DetailsProvider>
@@ -109,6 +118,7 @@ function App() {
           <Otp1 path="/otp" />
           <Dashboard1 path="/dashboard" />
           <Details1 path="/fulldetails" />
+          <Gif1 path="/gif" />
           <PersonalDetails1 path="/" />
         </Router>
       </div>

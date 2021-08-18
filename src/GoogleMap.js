@@ -36,7 +36,7 @@ import qs from "qs";
 
 const libraries = ["places", "drawing", "geometry"];
 const mapContainerStyle = {
-    height: "70vh",
+    height: "64vh",
     width: "100vw",
 };
 const options = {
@@ -141,6 +141,7 @@ export default function GoogleMap2() {
     return (
         <div className="g-map">
             {/* <Locate panTo={panTo} /> */}
+            <div id="gif"><a className="gif" href="/gif">Don't know how to draw the boundary ? Click here!</a></div>
             <Search panTo={panTo} />
 
             <GoogleMap

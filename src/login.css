@@ -21,12 +21,19 @@
 span{
     color:#7C83FD;
 }
+#gif_page {
+    height: 78vh;
+}
 .loginImg{
 
     width: 40%;
     height: auto;
     margin-left: 25rem;
     margin-top: -0.4rem;
+}
+.gifImg{
+    margin-left: 15rem;
+    margin-top: 2rem;
 }
 
 .login_Line{

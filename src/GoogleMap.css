@@ -87,6 +87,20 @@
     width: 30px;
     cursor: pointer;
   }
+  .gif{
+    text-decoration: none;
+    margin-bottom: 5rem;
+    margin-left: 32%;
+    color: black;
+  }
+  #gif{
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  .gif:hover{
+    color: #480cec;
+    outline: 0;
+  }
 
   .btn_submit2{
     background-color: transparent;
