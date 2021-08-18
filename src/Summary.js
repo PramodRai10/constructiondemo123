@@ -59,7 +59,7 @@ function Summary() {
             <div className="flex-left summary">
 
 
-                <h1 className="topHeading">Summary</h1>
+                <h3 className="topHeading">Confirm by clicking submit button</h3>
                 <h4>Personal Name:   {details.full_name}</h4>
 
                 <h4>Company Name:   {details.company_name}</h4>
@@ -95,7 +95,7 @@ function Summary() {
 
                 <h4>Image Url: <a href={details.image_url} target="_blank">Click Here</a> </h4>
 
-                <button className="btn_submit construct btn_summary" type="submit" onClick={post_data}>Confirm</button>
+                <button className="btn_submit construct btn_summary" type="submit" onClick={post_data}>Submit</button>
 
                 {/* Spinner */}
                 <div className="cont" style={{ display: 'none' }}>
