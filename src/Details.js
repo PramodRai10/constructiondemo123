@@ -32,6 +32,10 @@ function Details({ location }) {
 
                 <h4>Postcode:   {location && location.state.user.postcode}</h4>
 
+                <h4>Center Coordinate: 
+                        ( {JSON.parse(location.state.user.center_coordinate).lat},  {JSON.parse(location.state.user.center_coordinate).lng} )
+                </h4>
+
                 <h4>Map Coordinates:
                     <ul>
                         {location && location.state.user.map_coordinates && JSON.parse(location.state.user.map_coordinates).map((e) => {
