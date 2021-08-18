@@ -30,11 +30,13 @@ function Header() {
         //console.log(JSON.stringify(response.data));
         let data1 = JSON.stringify(response.data);
         data1 = JSON.parse(data1);
-        //console.log(data1);
         if (data1.statusCode == 200) {
-          //console.log(data1);
-          delete data1.body['image_url_api']
-          obj.data = data1.body;
+          var updatedData = JSON.parse(data1.body).map((e)=>{
+              delete e['image_url_api'];
+              return e;
+          })
+          //console.log(updatedData)
+          obj.data = JSON.stringify(updatedData);
           window.localStorage.setItem('user_login', JSON.stringify(obj));
           document.getElementById("redirect-dash").disabled = false; 
           navigate('/dashboard');

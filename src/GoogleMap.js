@@ -91,7 +91,7 @@ export default function GoogleMap2() {
 
     const panTo = React.useCallback(({ lat, lng }) => {
         mapRef.current.panTo({ lat, lng });
-        mapRef.current.setZoom(14);
+        mapRef.current.setZoom(18);
     }, []);
 
     if (loadError) return "Error";
@@ -125,11 +125,8 @@ export default function GoogleMap2() {
                 let data1 = JSON.stringify(response.data);
                 console.log(data1);
                 data1 = JSON.parse(data1);
-                console.log(data1.body)
-
-                // setDetails({
-                //     ...details, image_url: data1.body
-                // });
+                //console.log(data1.body)
+                
                 obj.image_url = data1.body;
                 window.localStorage.setItem('constructionUser', JSON.stringify(obj));
                 navigate("/confirmDetails");

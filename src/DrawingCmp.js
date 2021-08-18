@@ -19,8 +19,9 @@ const DrawingComponent = () => {
     const onPolygonComplete = (polygon) => {
         var polygonBounds = polygon.getPath();
 
-        //console.log(polygonBounds.getNorthEast());
-        console.log(polygon);
+        var bounds1 = new window.google.maps.LatLngBounds();
+        var polygonCoords = [];
+
         var bounds = [];
         var link_str = "https://maps.googleapis.com/maps/api/staticmap?size=640x640&path=";
         for (var i = 0; i < polygonBounds.length; i++) {
@@ -28,25 +29,28 @@ const DrawingComponent = () => {
                 lat: polygonBounds.getAt(i).lat(),
                 lng: polygonBounds.getAt(i).lng()
             };
-            link_str += `${point.lat},${point.lng}|`
+            link_str += `${point.lat},${point.lng}|`;
+            polygonCoords.push(new window.google.maps.LatLng(point.lat, point.lng));
             bounds.push(point);
         }
+        for (i = 0; i < polygonCoords.length; i++) {
+            bounds1.extend(polygonCoords[i]);
+        }
+        const center_coordinate = {
+            lat: bounds1.getCenter().lat().toFixed(5),
+            lng: bounds1.getCenter().lng().toFixed(5)
+        }
+
+        //Maps Static API Link
         link_str += `${bounds[0].lat},${bounds[0].lng}`
-        link_str += `&sensor=false&key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}`
+        link_str += `&sensor=false&zoom=18&key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}`
         //console.log(link_str);
+
         var result = parseFloat(window.google.maps.geometry.spherical.computeArea(polygon.getPath())) * 0.000247105;
         var area = result.toFixed(4);
-        //console.log(bounds);
-        //console.log(bounds);
-        //console.log(area);
         let obj2 = {
-            ...details, map_coordinates: JSON.stringify(bounds), shape: 'Polygon', area: area, image_url_api: link_str
+            ...details, map_coordinates: JSON.stringify(bounds), shape: 'Polygon', area: area, image_url_api: link_str, center_coordinate: JSON.stringify(center_coordinate)
         }
-        //console.log(obj2)
-        // setDetails({
-        //     ...details, map_coordinates: bounds, shape: 'Polygon', area: area, image_url_api: link_str
-        // });
-        //console.log(obj2);
         window.localStorage.setItem('constructionUser', JSON.stringify(obj2));
         // polygon.setMap(null);
     };
