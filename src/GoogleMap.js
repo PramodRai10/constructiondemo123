@@ -141,7 +141,7 @@ export default function GoogleMap2() {
     return (
         <div className="g-map">
             {/* <Locate panTo={panTo} /> */}
-            <div id="gif"><a className="gif" href="/gif">Don't know how to draw the boundary ? Click here!</a></div>
+            <div id="gif"><a className="gif" href="/gif" target="_blank">Don't know how to draw the boundary ? Click here!</a></div>
             <Search panTo={panTo} />
 
             <GoogleMap

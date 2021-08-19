@@ -54,6 +54,7 @@ function Login() {
           }
         })
         .catch(function (error) {
+          console.log(error);
           document.querySelector('.cont').style.display = 'none';
           alert('Something went wrong, Please try Again')
           navigate('/login')
