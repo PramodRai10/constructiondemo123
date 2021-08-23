@@ -1,9 +1,27 @@
 import React from "react";
-import "./header.css";
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import { Link , navigate} from "@reach/router";
 import axios from "axios";
 import qs from "qs";
 import { window, document } from "browser-monads";
+import "./header.css";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 function Header() {
   let obj = window.localStorage.getItem('user_login');
@@ -56,19 +74,38 @@ function Header() {
         //navigate('/otp')
       });
   }
+  const classes = useStyles();
+
   return (
-    <header>
-      <div className="flex-box2">
-        <div className="left-flex2">
-          <Link style={{ textDecoration: "none" }} to="/"><h1 className="header-logo">Logo</h1></Link>
-        </div>
-        <div className="right-flex2">
-          {Object.keys(obj).length > 1 && obj.constructor === Object && <button id="redirect-dash" className="buttonHeader" onClick={getQueries}>Dashboard</button>}
-          {Object.keys(obj).length > 1 && obj.constructor === Object && <Link to="/"><button className="buttonHeader" id="logoutBtn" onClick={() => window.localStorage.removeItem('user_login')}>Logout</button></Link>}
-          {Object.keys(obj).length <= 1 && obj.constructor === Object && <Link to="/login"><button className="buttonHeader" id="loginbtn">Login</button></Link>}
-        </div>
-      </div>
-    </header>
+    // <header>
+    //   <div className="flex-box2">
+    //     <div className="left-flex2">
+    //       <Link style={{ textDecoration: "none" }} to="/"><h1 className="header-logo">Logo</h1></Link>
+    //     </div>
+    //     <div className="right-flex2">
+    //       {Object.keys(obj).length > 1 && obj.constructor === Object && <button id="redirect-dash" className="buttonHeader" onClick={getQueries}>Dashboard</button>}
+    //       {Object.keys(obj).length > 1 && obj.constructor === Object && <Link to="/"><button className="buttonHeader" id="logoutBtn" onClick={() => window.localStorage.removeItem('user_login')}>Logout</button></Link>}
+    //       {Object.keys(obj).length <= 1 && obj.constructor === Object && <Link to="/login"><button className="buttonHeader" id="loginbtn">Login</button></Link>}
+    //     </div>
+    //   </div>
+    // </header>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar id="navbarFull">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+           
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            <Link to="/" style={{textDecoration: "none"}}><h3 className="logoText">Logo</h3></Link>
+          </Typography>
+          {Object.keys(obj).length > 1 && <button color="inherit" className="dashboardBtn" id="redirect-dash" onClick={getQueries}>Dashboard</button>}
+          {Object.keys(obj).length > 1 && <Link to="/"><button color="inherit" className="dashboardBtn" onClick={() => window.localStorage.removeItem('user_login')}>Logout</button></Link>}
+          {Object.keys(obj).length <= 1 && <Link to="/login"><button color="inherit" id="loginBtn">Login</button></Link>}
+          
+
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
 

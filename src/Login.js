@@ -21,7 +21,7 @@ function Login() {
     let email = document.querySelector('.emailInput').value;
     if (error.email_id == '' && email != '') {
       let otp = otpGenerator.generate(6, { upperCase: false, specialChars: false });
-      console.log(otp);
+      //console.log(otp);
       document.querySelector('.cont').style.display = 'block';
       var data = qs.stringify({ email, otp });
       var config = {

@@ -1,163 +1,53 @@
-  header {
-    background-color: #F9F9F9;
-    margin: auto -16px;
-    padding: 16px 32px;
-    
-    
-  }
-  .header-logo{
-      color: #0A1931;
-      margin-left: 5.5rem ;
-    
-  }
-  .right-flex2{
-    display: flex;
-  }
-
-
-  #redirect-dash{
-   display: flex;
-   flex-direction: row;
-   margin-left: 5rem;
-   background-color: #ffffffff; 
-    border: 1px solid #4750ff;
-    color: #4750ff;
-    padding: 2px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    /* margin: 2px; */
-    cursor: pointer;
-    border-radius: 5px;
-    /* margin-left: 59rem; */
-    margin-left: 50rem;
-    
-  }
-
-#logoutBtn{
-  display: flex;
-  flex-direction: row;
-  background-color: #ffffffff; 
-  border: 1px solid #4750ff;
-  color: #4750ff;
-  padding: 10px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  /* margin: 2px; */
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 25%;
-  
-  
+*{
+  margin: 0% 0%;
+  padding: 0% 0%;
 }
-  
 
-   #loginbtn{
-    background-color: #ffffffff; 
+#navbarFull{
+  background-color: #fff;
+}
+
+#loginBtn{
+  background-color: #ffffffff; 
     border: 1px solid #4750ff;
     color: #4750ff;
     padding: 10px 15px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    margin-right: 6%;
     font-size: 16px;
     /* margin: 2px; */
     cursor: pointer;
     border-radius: 5px;
-    
 
-     margin-left: 59rem; 
-    
-    
-  }
-  
-  #loginbtn:hover{
-    background-color:#7C83FD ;
-    color: #fff;
-  }
-  #logoutBtn:hover{
-    background-color:#7C83FD ;
-    color: #fff;
-  }
-
-  #redirect-dash:hover{
-    background-color:#7C83FD ;
-    color: #fff;
-  }
-
-
-  .flex-box2{
-
-    display: flex;
-    height: 45px;
-  }
-
-  .flex-left2{
-
-    display: flex;
-    flex-direction: column;
-    flex: 0.5;
-   
-
-  }
-
-  .flex-right2{
-
-    display: flex;
-    
-    flex: 0.5;
-    
-  }
-
-  @media screen and (max-width:730px){
-
-    #loginbtn{
-      margin-left: 8rem;
-    }
-
-    #redirect-dash{
-      
-
-      margin-left: 10%;
-
-    }
-
-    #logoutBtn{
-    
-
-      margin-left: 5%;
-      margin-right: 10%;
-    }
-    .header-logo{
-      color: #0A1931;
-      margin-left: 0.5rem ;
-    
-  }
-  }
-@media screen and (max-width:1230px)
-{
-
-  #loginbtn{
-    margin-left: 15rem;
-  }
-
-  #redirect-dash{
-      
-
-    margin-left: 90%;
-
-  }
-
-  #logoutBtn{
-  
-
-    margin-left: 5%;
-    margin-right: 10%;
-  }
 }
+#loginBtn:hover{
+  color: #fff;
+  background-color: #4750ff;
   
+}
 
-  
+.dashboardBtn{
+  background-color: #ffffffff; 
+    border: 1px solid #4750ff;
+    color: #4750ff;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+     margin-right:4%;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.logoText{
+  color:#1f1f1f;
+  font-family: cursive;
+ 
+  margin-left: 4.5%;
+}
+.dashboardBtn:hover{
+  color: #fff;
+  background-color: #4750ff;
+}
