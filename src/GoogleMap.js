@@ -41,7 +41,7 @@ const mapContainerStyle = {
 };
 const options = {
     styles: mapStyles,
-    disableDefaultUI: true,
+    // disableDefaultUI: true,
     zoomControl: true,
 };
 // let center = {
@@ -50,7 +50,7 @@ const options = {
 // };
 let place = '';
 export default function GoogleMap2() {
-    // const [details, setDetails] = useContext(DetailsContext);
+    const [polygon1, setPolygon1] = useContext(DetailsContext);
     let obj = window.localStorage.getItem('constructionUser');
     if (typeof (obj) == "string") {
         obj = JSON.parse(obj);
@@ -138,11 +138,20 @@ export default function GoogleMap2() {
                 navigate('/selectArea')
             });
     }
+    function clearMap(){
+        if(polygon1){
+            polygon1.setMap(null);
+            setPolygon1(null);
+        }
+    }
     return (
         <div className="g-map">
             {/* <Locate panTo={panTo} /> */}
             <div id="gif"><a className="gif" href="/gif" target="_blank">Don't know how to draw the boundary ? Click here!</a></div>
-            <Search panTo={panTo} />
+            <div id="flex-container">
+                <button className="clear-map" onClick={clearMap}>Clear Map</button>
+                <Search panTo={panTo} />
+            </div>
 
             <GoogleMap
                 id="map"
@@ -194,7 +203,11 @@ export default function GoogleMap2() {
                 <div className="loader"></div>
                 <h2>Please Hold On, Submitting your details...</h2>
             </div>
+            <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+            <button className="btn_submit2 construct2" type="submit" onClick={()=> navigate('/siteDetails')}><i class="fas fa-arrow-right"></i>Back</button>
             <button className="btn_submit2 construct2" type="submit" onClick={handleSubmit}><i class="fas fa-arrow-right"></i>Next</button>
+            </div>
+
         </div>
     );
 }

@@ -47,7 +47,7 @@ function SiteDetails() {
             let streetName = document.querySelector("#street_name").value;
             let townName = document.querySelector("#town_name").value;
 
-            if (houseNumber != "" && streetName != "" && townName != "") {
+            if (streetName != "") {
                 //console.log(details);
                 var postcode = details.postcode ? details.postcode : 'MK10 9RP';
                 var data = qs.stringify({
@@ -89,7 +89,7 @@ function SiteDetails() {
                     });
             } else {
                 console.log('Some Inputs are not filled');
-                alert('Please fill all inputs');
+                alert('Please fill all required inputs');
             }
         } else {
             console.log('Inputs are not correct');
@@ -108,14 +108,14 @@ function SiteDetails() {
                     <BsFillHouseDoorFill className="textBox_icons" /><input type="text" placeholder="Enter the house number or name" id="house_number" className="topInput" value={details.house_number} name="house_number" onChange={handleChange}></input>
 
                     {/* <h4>Street Name:</h4> */}
-                    <SiGooglestreetview className="textBox_icons" /><input type="text" placeholder="Enter the street name" id="street_name" className="topInput" value={details.street_name} name="street_name" onChange={handleChange}></input>
+                    <SiGooglestreetview className="textBox_icons" />*<input type="text" placeholder="Enter the street name" id="street_name" className="topInput" value={details.street_name} name="street_name" onChange={handleChange}></input>
 
                     {/* <h4>Town:</h4> */}
                     <br></br>
                     <MdLocationCity className="textBox_icons" /><input type="text" placeholder="Enter town" id="town_name" className="topInput" value={details.town_name} name="town_name" onChange={handleChange}></input>
 
                     {/* <h4>Enter the PostCode of area:</h4> */}
-                    <MdLocalPostOffice className="textBox_icons" /><input type="text" placeholder="Enter the PostCode" id="postcode" className="topInput" value={details.postcode} name="postcode" onChange={
+                    <MdLocalPostOffice className="textBox_icons" />*<input type="text" placeholder="Enter the PostCode" id="postcode" className="topInput" value={details.postcode} name="postcode" onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value

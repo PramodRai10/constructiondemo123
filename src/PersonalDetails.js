@@ -70,7 +70,7 @@ function PersonalDetails() {
 
                 {/* <h4>Enter your full name</h4> */}
                 <div className="secondForm">
-                <FaUserCheck className="textBox_icons"/> <input type="text" placeholder="Full Name" id="full_name" className="topInput" name="full_name" value={details.full_name} onChange={
+                <FaUserCheck className="textBox_icons"/>*<input type="text" placeholder="Full Name" id="full_name" className="topInput" name="full_name" value={details.full_name} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -98,7 +98,7 @@ function PersonalDetails() {
                     <span id="invalid_name" className="inavlid_input" style={{ display: "none" }}>Not a valid name</span>
 
                     {/* <h4>Enter your company name</h4> */}
-                    <AiFillTool className="textBox_icons"/> <input type="text" placeholder="Company Name" id="company_name" className="topInput" name="company_name" value={details.company_name} onChange={
+                    <AiFillTool className="textBox_icons"/>*<input type="text" placeholder="Company Name" id="company_name" className="topInput" name="company_name" value={details.company_name} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -129,7 +129,7 @@ function PersonalDetails() {
                 
                     {/* <h4>Enter your email id</h4> */}
                     <br></br>
-                    <MdEmail className="textBox_icons"/> <input type="email" placeholder="Your mail" id="email_id" className="topInput" name="email" value={details.email} onChange={
+                    <MdEmail className="textBox_icons"/>*<input type="email" placeholder="Your mail" id="email_id" className="topInput" name="email" value={details.email} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value
@@ -158,7 +158,7 @@ function PersonalDetails() {
                     <span id="invalid_mail" className="inavlid_input" style={{ display: "none" }}>Not a valid mail</span>
 
                     {/* <h4>Enter your phone number</h4> */}
-                    <FaPhoneAlt className="textBox_icons"/> <input type="text" placeholder="Your Phone" id="phone" className="topInput" name="phone" value={details.phone} onChange={
+                    <FaPhoneAlt className="textBox_icons"/>*<input type="text" placeholder="Your Phone" id="phone" className="topInput" name="phone" value={details.phone} onChange={
                         (e) => {
                             setDetails({
                                 ...details, [e.target.name]: e.target.value

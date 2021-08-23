@@ -3,10 +3,10 @@ import React, {useState, createContext} from 'react'
 export const DetailsContext = createContext()
 
 export const DetailsProvider = (props) => {
-    const [details, setDetails] = useState({})
+    const [polygon1, setPolygon1] = useState(null)
 
     return (
-        <DetailsContext.Provider value={[details, setDetails]}>
+        <DetailsContext.Provider value={[polygon1, setPolygon1]}>
             {props.children}
         </DetailsContext.Provider>
     )

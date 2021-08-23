@@ -60,11 +60,11 @@ function Summary() {
 
 
                 <h3 className="topHeading">Confirm by clicking submit button</h3>
-                <h4>Personal Name:   {details.full_name}</h4>
+                <h4>Name:   {details.full_name}</h4>
 
                 <h4>Company Name:   {details.company_name}</h4>
 
-                <h4>Email Id:   {details.email}</h4>
+                <h4>Email address:   {details.email}</h4>
 
                 <h4>Phone:   {details.phone}</h4>
 
@@ -95,8 +95,11 @@ function Summary() {
 
                 <h4>Image Url: <a href={details.image_url} target="_blank">Click Here</a> </h4>
 
-                <button className="btn_submit construct btn_summary" type="submit" onClick={post_data}>Submit</button>
-
+                {/* <button className="btn_submit construct btn_summary" type="submit" onClick={post_data}>Submit</button> */}
+                <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                   <button className="btn_submit2 construct2" type="submit" onClick={()=> navigate('/selectArea')}><i class="fas fa-arrow-right"></i>Back</button>
+                   <button className="btn_submit2 construct2" type="submit" onClick={post_data}><i class="fas fa-arrow-right"></i>Submit</button>
+                </div>
                 {/* Spinner */}
                 <div className="cont" style={{ display: 'none' }}>
                     <div className="loader"></div>

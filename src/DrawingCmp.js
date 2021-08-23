@@ -4,6 +4,7 @@ import { DrawingManager } from "@react-google-maps/api";
 import { DetailsContext } from "./DetailsContext"
 
 const DrawingComponent = () => {
+    const [polygon1, setPolygon1] = useContext(DetailsContext);
 
     let obj = window.localStorage.getItem('constructionUser');
     if(typeof(obj)=="string"){
@@ -17,6 +18,7 @@ const DrawingComponent = () => {
     };
 
     const onPolygonComplete = (polygon) => {
+        setPolygon1(polygon);
         var polygonBounds = polygon.getPath();
 
         var bounds1 = new window.google.maps.LatLngBounds();
