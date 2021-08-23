@@ -80,7 +80,7 @@ function Summary() {
                         ( {JSON.parse(details.center_coordinate).lat},  {JSON.parse(details.center_coordinate).lng} )
                 </h4>
 
-                <h4>Map Coordinates:
+                {/* <h4>Map Coordinates:
                     <ul>
                         {details.map_coordinates != null && JSON.parse(details.map_coordinates).map((e) => {
                             return (<li>
@@ -89,7 +89,7 @@ function Summary() {
                             </li>)
                         })}
                     </ul>
-                </h4>
+                </h4> */}
 
                 <h4>Area: {details.area}</h4>
 

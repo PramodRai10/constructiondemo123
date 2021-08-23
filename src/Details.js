@@ -36,7 +36,7 @@ function Details({ location }) {
                         ( {JSON.parse(location.state.user.center_coordinate).lat},  {JSON.parse(location.state.user.center_coordinate).lng} )
                 </h4>
 
-                <h4>Map Coordinates:
+                {/* <h4>Map Coordinates:
                     <ul>
                         {location && location.state.user.map_coordinates && JSON.parse(location.state.user.map_coordinates).map((e) => {
                             return (<li>
@@ -45,7 +45,7 @@ function Details({ location }) {
                             </li>)
                         })}
                     </ul>
-                </h4>
+                </h4> */}
 
                 <h4>Area: {location && location.state.user.area}</h4>
 
