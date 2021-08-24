@@ -76,9 +76,9 @@ function Summary() {
 
                 <h4>Postcode:   {details.postcode}</h4>
 
-                <h4>Center Coordinate: 
+                {/* <h4>Center Coordinate: 
                         ( {JSON.parse(details.center_coordinate).lat},  {JSON.parse(details.center_coordinate).lng} )
-                </h4>
+                </h4> */}
 
                 {/* <h4>Map Coordinates:
                     <ul>

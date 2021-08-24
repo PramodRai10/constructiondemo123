@@ -1,4 +1,4 @@
-.cardTop{
+/* .cardTop{
     height: 70vh;
 }
 
@@ -95,4 +95,96 @@
   font-size: 1rem;
   color: #A19882;
   font-family: 'Poppins', sans-serif;
+} */
+
+.cardTop{
+  height: 70vh;
+}
+
+
+@media screen and (max-width:730px) {
+
+  .cardTop{
+      margin-left: 5rem;
+  }
+}
+.cardBody{
+  height: 20rem;
+  width: 18rem;
+  padding-bottom: 2rem;
+  border-radius: 25px;
+  border: 1px solid grey;
+  margin-top: -24rem;
+  background-color: #ffffffff;
+}
+.companyNAme{
+font-size: 80%; 
+color: #185ADB;
+font-family: 'Poppins', sans-serif;
+margin-top: 4rem;
+margin-left: 0.5rem;
+
+}
+.address{
+font-size: 1rem;
+margin-top: 5%;
+margin-left: 0.5rem;;
+}
+.DateOfSubmissoin{
+font-size: 0.8rem;
+margin-left: 00.5rem;
+margin-top: 1rem;
+font-family: 'Poppins', sans-serif;
+color:#A19882;
+}
+.salary{
+font-size: 0.8rem;
+margin-left: 00.5rem;
+margin-top: 1rem;
+font-family: 'Poppins', sans-serif;
+color:#A19882 ;
+}
+
+.status{
+font-size: 0.8rem;
+margin-left: 00.5rem;
+margin-top: 0.5rem;
+font-family: 'Poppins', sans-serif;
+color:#A19882 ;
+margin-left: 12rem;
+
+}
+
+#viewDetails{
+
+width: 7.5rem;
+height: 2.5rem;
+margin-left: 00.5rem;
+font-size: 0.9rem;
+
+
+}
+
+.bodyCard{
+
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 2rem auto;
+max-width: 90%;
+
+margin-top: 12rem;
+}
+.cardHeading{
+margin-left: 37%;
+font-family: 'Roboto Condensed', sans-serif;
+color: #0A1931;
+font-size: 3rem;
+line-height: 1.5;
+}
+.cardParagraph{
+margin-left: 43%;
+font-size: 1rem;
+color: #A19882;
+font-family: 'Poppins', sans-serif;
 }
