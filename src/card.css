@@ -1,4 +1,4 @@
-/* .cardTop{
+.cardTop{
     height: 70vh;
 }
 
@@ -95,9 +95,9 @@
   font-size: 1rem;
   color: #A19882;
   font-family: 'Poppins', sans-serif;
-} */
+}
 
-.cardTop{
+/* .cardTop{
   height: 70vh;
 }
 
@@ -187,4 +187,4 @@ margin-left: 43%;
 font-size: 1rem;
 color: #A19882;
 font-family: 'Poppins', sans-serif;
-}
+} */
