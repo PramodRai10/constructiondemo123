@@ -1,190 +1,47 @@
-.cardTop{
-    height: 70vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
-@media screen and (max-width:730px) {
-
-    .cardTop{
-        margin-left: 5rem;
-    }
-}
-.cardBody{
-    height: 20rem;
-    width: 18rem;
-    padding-bottom: 2rem;
-    border-radius: 25px;
-    border: 1px solid grey;
-    margin-top: -24rem;
-    background-color: #ffffffff;
-}
-.companyNAme{
-  font-size: 99%; 
-  color: #185ADB;
-  font-family: 'Poppins', sans-serif;
-  margin-top: 4rem;
-  margin-left: 0.5rem;
-  font-weight: 600;
-}
-.address{
- font-size: 1rem;
- margin-top: 5%;
- font-weight: 400;
- margin-left: 0.5rem;;
-}
-.DateOfSubmissoin{
-  font-size: 0.8rem;
-  font-weight: 300;
-  margin-left: 00.5rem;
-  margin-top: 1rem;
-  font-family: 'Poppins', sans-serif;
-  color:#A19882;
-}
-.salary{
-  font-size: 0.8rem;
-  margin-left: 00.5rem;
-  margin-top: 1rem;
-  font-family: 'Poppins', sans-serif;
-  color:#A19882 ;
-}
-
-.status{
-  font-size: 0.8rem;
-  margin-left: 00.5rem;
-  margin-top: 0.5rem;
-  font-family: 'Poppins', sans-serif;
-  color:#A19882 ;
-  margin-left: 12rem;
+body{
+height: 100%;
 
 }
 
-#viewDetails{
-  
-  width: 7.5rem;
-  height: 2.5rem;
-  margin-left: 0.5rem;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  background-color: #0F52BA;
-  color: #fff;
-  border-radius: 2px;
 
 
-
+#table{
+  background-color: #EEEEEE;
+  width: 85%;
+  margin-left: 9%;
+  margin-top: 12%;
+  margin-bottom: 10%;
+  font-family: 'Montserrat', sans-serif;
 }
-
-.bodyCard{
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 2rem auto;
-  max-width: 90%;
-
-  margin-top: 12rem;
-}
-.cardHeading{
-  margin-left: 37%;
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #0A1931;
-  font-size: 3rem;
-  line-height: 1.5;
-}
-.cardParagraph{
-  margin-left: 43%;
-  font-size: 1rem;
-  color: #A19882;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* .cardTop{
-  height: 70vh;
-}
-
-
-@media screen and (max-width:730px) {
-
-  .cardTop{
-      margin-left: 5rem;
-  }
-}
-.cardBody{
-  height: 20rem;
-  width: 18rem;
-  padding-bottom: 2rem;
-  border-radius: 25px;
-  border: 1px solid grey;
-  margin-top: -24rem;
-  background-color: #ffffffff;
-}
-.companyNAme{
-font-size: 80%; 
-color: #185ADB;
-font-family: 'Poppins', sans-serif;
-margin-top: 4rem;
-margin-left: 0.5rem;
-
-}
-.address{
-font-size: 1rem;
-margin-top: 5%;
-margin-left: 0.5rem;;
-}
-.DateOfSubmissoin{
-font-size: 0.8rem;
-margin-left: 00.5rem;
-margin-top: 1rem;
-font-family: 'Poppins', sans-serif;
-color:#A19882;
-}
-.salary{
-font-size: 0.8rem;
-margin-left: 00.5rem;
-margin-top: 1rem;
-font-family: 'Poppins', sans-serif;
-color:#A19882 ;
-}
-
-.status{
-font-size: 0.8rem;
-margin-left: 00.5rem;
-margin-top: 0.5rem;
-font-family: 'Poppins', sans-serif;
-color:#A19882 ;
-margin-left: 12rem;
-
-}
-
-#viewDetails{
-
-width: 7.5rem;
-height: 2.5rem;
-margin-left: 00.5rem;
-font-size: 0.9rem;
-
-
-}
-
-.bodyCard{
-
+.headingDash{
 display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-margin: 2rem auto;
-max-width: 90%;
+justify-content: center;
+align-content: center;
+font-family: 'Montserrat', sans-serif;
+}
+.view_details{
+    background-color: #ffffffff; 
+    border: 1px solid #4750ff;
+    color: #4750ff;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 6%;
+    font-size: 16px;
+    /* margin: 2px; */
+    cursor: pointer;
+    border-radius: 5px;
+    height: 50%;
 
-margin-top: 12rem;
 }
-.cardHeading{
-margin-left: 37%;
-font-family: 'Roboto Condensed', sans-serif;
-color: #0A1931;
-font-size: 3rem;
-line-height: 1.5;
+.view_details:hover{
+  color: #fff;
+  background-color: #4750ff;
+  
 }
-.cardParagraph{
-margin-left: 43%;
-font-size: 1rem;
-color: #A19882;
-font-family: 'Poppins', sans-serif;
-} */
+
+
+

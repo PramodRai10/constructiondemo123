@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .topHead{
     height: 80vh;
-
-    
-    background-image: linear-gradient(to right, #7C83FD , #9295c9);
-
+    background-image: linear-gradient(to right, #120E43 , #2827CC);
 }
 
 .TopHeading{
@@ -32,22 +30,62 @@
     font-size: 5vw;
     font-weight: 800;
 } 
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
 .topHead{
+    height: 108vh;
+    
+    background-image: linear-gradient(
+        to right bottom, rgba(64, 77, 255, 0.781),rgba(16, 2, 53, 0.24)),url(./images/dashboardImg.jpg);
+        clip-path: polygon(100% 0, 100% 63%, 86% 79%, 0 47%, 0 0);
 
-    width:150%;
+
+
+padding-right: 2%;
+background-size:contain;
+
+
+
 }
+
+.TopHeading{
+    
+    font-family: 'Montserrat', sans-serif;
+
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding-top: 5rem;
+    font-size: 4vw;
+    font-weight: 800;
+    margin-left: 6%;
+    
 }
 
-@media screen and (max-width:1230px){
-
-    .TopHeading{
-        margin-right: 13rem;
-    }
+@media screen and (max-width: 1010px) {
 
     .topHead{
+        height: 50vh;
+    
+        background-image: linear-gradient(
+            to right bottom, rgba(64, 77, 255, 0.781),rgba(16, 2, 53, 0.24)),url(./images/dashboardImg.jpg);
+            clip-path: none;
 
-        width:150%;
+margin-bottom: 8%;
+            background-size:cover;
+
     }
-
-
+    .TopHeading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       padding-top: 20%;
+       font-size: 6vw;
+       margin-left: 3%;
+    }
+    
 }
