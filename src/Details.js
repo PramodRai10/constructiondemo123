@@ -51,6 +51,15 @@ function Details({ location }) {
 
                 <h4>Image Url: <a href={location && location.state.user.image_url} target="_blank">Click Here</a> </h4>
 
+                <h4>Files:
+                    <ul>
+                        {location && location.state.user.files && JSON.parse(location.state.user.files).map((e) => {
+                            return (<li>
+                                 {e.company_name}: {e.url}
+                            </li>)
+                        })}
+                    </ul>
+                </h4>
             </div>
             <div className="flex-right">
                 <img src={img_2} className="img_2"></img>
