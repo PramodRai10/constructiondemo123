@@ -36,8 +36,14 @@ function Otp() {
         console.log(data1);
         if (data1.statusCode == 200) {
           console.log(data1);
+          // let data2 = JSON.parse(data1.body).map((td)=>{
+          //   let temp = td['image_url_api'];
+          //   delete temp['image_url_api'];
+          //   return temp;
+          // })
           delete data1.body['image_url_api'];
           obj1.data = data1.body;
+          // obj1.data = data2;
           window.localStorage.setItem('user_login', JSON.stringify(obj1));
           navigate('/dashboard');
         }

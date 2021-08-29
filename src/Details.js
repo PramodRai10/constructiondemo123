@@ -53,9 +53,9 @@ function Details({ location }) {
 
                 <h4>Files:
                     <ul>
-                        {location && location.state.user.files && JSON.parse(location.state.user.files).map((e) => {
+                        {location && location.state.user.files && location.state.user.files.map((e) => {
                             return (<li>
-                                 {e.company_name}: {e.url}
+                                <a href={e.url} target="_blank">{e.company_name}</a>
                             </li>)
                         })}
                     </ul>
