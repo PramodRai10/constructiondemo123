@@ -55,7 +55,7 @@ function Details({ location }) {
                     <ul>
                         {location && location.state.user.files && location.state.user.files.map((e) => {
                             return (<li>
-                                <a href={e.url} target="_blank">{e.company_name}</a>
+                                <a href={e.companyFolderUrl} target="_blank">{e.companyname}</a>
                             </li>)
                         })}
                     </ul>
